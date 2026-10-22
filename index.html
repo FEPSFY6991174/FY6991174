@@ -1,19 +1,54 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <img src="WebBanner2026.png" alt="Banner" width="1200" height="300">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
-    <h2>Student URN: 6991174</h2>
-    <hr>
+    <title>Conference Paper - ENG0018</title>
 
-    <h2 style="font-family:calibri;"><b>Conference Paper: XXXXX</b></h2>
+    <link rel="stylesheet"
+          href="https://www.w3schools.com/w3css/4/w3.css">
 
     <style>
+        body {
+            background-color: #FFFFFF;
+            margin: 0 50px;
+            font-family: Arial, sans-serif;
+            color: #222222;
+            line-height: 1.6;
+        }
+
+        .banner {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #003366;
+        }
+
+        h2 {
+            font-family: Calibri, sans-serif;
+        }
+
+        h3 {
+            color: #003366;
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 5px;
+        }
+
         table {
             font-family: Arial, sans-serif;
             border-collapse: collapse;
-            width: 30%;
+            width: 100%;
+            max-width: 700px;
+            margin: 20px 0;
         }
 
         td, th {
@@ -22,23 +57,306 @@
             padding: 8px;
         }
 
+        th {
+            background-color: #003366;
+            color: white;
+        }
+
         tr:nth-child(even) {
-            background-color: #dddddd;
+            background-color: #eeeeee;
         }
 
         p.ex1 {
-            margin-left: 250px;
+            margin-left: 25px;
+        }
+
+        .contents {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .contents a {
+            color: #0645AD;
+            text-decoration: underline;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .paper-section {
+            margin-bottom: 30px;
+        }
+
+        .equation {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .references a {
+            overflow-wrap: anywhere;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                margin: 0 15px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            p.ex1 {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
 
-<style>
-.mySlides {display:none;}
-</style>
+    <!-- University banner -->
+    <img src="WebBanner2026.png"
+         alt="University of Surrey Banner"
+         class="banner">
 
-<body style="background-color:#FFFFFF;margin-left:50px;">
+    <!-- Module information -->
+    <header>
+        <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
 
+        <h2>Student URN: 6991174</h2>
+
+        <hr>
+
+        <h2>
+            <b>Conference Paper: Active Learning in Machine Learning</b>
+        </h2>
+
+        <hr>
+    </header>
+
+    <main>
+
+        <!-- Table of contents -->
+        <section class="paper-section">
+            <p class="ex1"><b>Table of Contents</b></p>
+
+            <table class="contents">
+                <tr>
+                    <th colspan="1">
+                        <h3>Table of contents</h3>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td><a href="#Abstract">Abstract</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="#Introduction">Introduction</a></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="#Analysis">Analysis and discussion</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><a href="#References">References</a></td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- Abstract -->
+        <section class="paper-section">
+            <h3 id="Abstract">Abstract</h3>
+
+            <p class="ex1">
+                <pre style="white-space: pre-wrap;
+                            font-family: Arial, sans-serif;">Active learning is a machine learning approach in which a model selects the data from which it would benefit most by learning. Instead of labelling an entire dataset, the model requests labels for selected examples from an oracle, such as a human expert. This approach can reduce the amount of labelled training data required. This paper introduces the main principles of active learning, discusses querying strategies and considers how iterative selection can improve the efficiency of model training. The effectiveness of active learning depends on the quality of the selected samples, the reliability of the labels and the stopping criteria used during training.</pre>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Introduction -->
+        <section class="paper-section">
+            <h3 id="Introduction">Introduction</h3>
+
+            <p class="ex1">
+                <pre style="white-space: pre-wrap;
+                            font-family: Arial, sans-serif;">Active Learning (Angluin, 1988; Cohn et al., 1994) is a paradigm where a concept is learnt by an intelligent machine through interaction between an oracle and the machine system over a sequence of learning epochs. A distinctive component of an active learning system is the querying strategy, which selects candidate training instances from a pool and evaluates their informativeness, meaning their potential to improve the classification model.
+
+Various strategies have been proposed, including Query by Committee (Seung et al., 1992), Monte Carlo estimation (Roy and McCallum, 2001), uncertainty sampling (Lewis and Gale, 1994) and version space reduction (Tong and Koller, 2001).
+
+At each epoch, the selected instances are presented to a machine or human oracle that knows the class labels. After the newly labelled instances are added to the current training set, a revised model is trained. The process continues until a stopping criterion is reached. The aim is to improve learning efficiently while reducing the need for large labelled datasets.</pre>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Analysis and discussion -->
+        <section class="paper-section">
+            <h3 id="Analysis">Analysis and discussion</h3>
+
+            <p>
+                Active learning aims to improve the efficiency of machine
+                learning by selecting the most informative examples for
+                labelling. Rather than labelling every available example,
+                the system focuses on data that may provide the greatest
+                improvement to the model.
+            </p>
+
+            <p>
+                Uncertainty sampling selects examples for which the model
+                is least confident about its predictions. Query by
+                Committee uses disagreement between multiple models to
+                identify potentially informative examples. These methods
+                can reduce labelling effort, although their performance
+                depends on the dataset and the reliability of the
+                selected labels.
+            </p>
+
+            <p>
+                An important consideration is the stopping criterion.
+                If the process continues after useful information has
+                been exhausted, additional labelling may provide little
+                benefit. The quality of the oracle and the selection
+                strategy must therefore be considered when evaluating
+                active learning.
+            </p>
+
+            <h4>Mathematical notation using MathML</h4>
+
+            <p>
+                MathML can be used to represent mathematical expressions
+                in a structured format. The following example shows a
+                simple quadratic equation:
+            </p>
+
+            <div class="equation">
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msup>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <mn>4</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                        <mo>+</mo>
+                        <mn>4</mn>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                    </mrow>
+                </math>
+            </div>
+
+            <p>
+                This equation is an example of how mathematical content
+                can be displayed in a webpage. It is included to
+                demonstrate the MathML formatting introduced in the
+                worksheet.
+            </p>
+
+            <h4>Example of tabular data: Bridge repairs</h4>
+
+            <p>
+                HTML tables can present numerical data in a structured
+                format. The following table uses the bridge repair
+                example from the worksheet.
+            </p>
+
+            <table>
+                <tr>
+                    <th>Cost of repairs (£ million)</th>
+                    <th>Lifespan of repairs (years)</th>
+                </tr>
+
+                <tr>
+                    <td>0.7</td>
+                    <td>2</td>
+                </tr>
+            </table>
+
+            <p>
+                The example shows a repair cost of £0.7 million and a
+                lifespan of two years. Further rows should be added
+                only when the corresponding data are available.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- References -->
+        <section class="paper-section references">
+            <h3 id="References">References</h3>
+
+            <p>
+                Angluin, D. (1988). Queries and concept learning.
+                <i>Machine Learning</i>.
+            </p>
+
+            <p>
+                Cohn, D., Ghahramani, Z. and Jordan, M. (1994).
+                Active learning with statistical models.
+            </p>
+
+            <p>
+                Lewis, D. D. and Gale, W. A. (1994).
+                A sequential algorithm for training text classifiers.
+            </p>
+
+            <p>
+                Roy, N. and McCallum, A. (2001).
+                Toward optimal active learning through sampling
+                estimation of error reduction.
+            </p>
+
+            <p>
+                Seung, H. S., Opper, M. and Sompolinsky, H. (1992).
+                Query by committee.
+            </p>
+
+            <p>
+                Tong, S. and Koller, D. (2001).
+                Support vector machine active learning with applications
+                to text classification.
+            </p>
+
+            <p>
+                Vlachos, A. (2008).
+                A stopping criterion for active learning.
+            </p>
+
+            <p>
+                Toshihiko et al. (2023).
+                <a href="https://www.icevirtuallibrary.com/doi/full/10.1680/jbren.21.00034"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View the article in the ICE Virtual Library
+                </a>.
+            </p>
+        </section>
+
+        <hr>
+
+        <footer>
+            <p>
+                ENG0018 Computer Laboratory 2026/27 |
+                Student URN: 6991174
+            </p>
+        </footer>
+
+    </main>
+
+</body>
 </html>
